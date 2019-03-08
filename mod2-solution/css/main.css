@@ -4,12 +4,13 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+article, aside, footer, header,
+hgroup, main,nav, section {
+	display: block;
 }
 
-header {
-	margin: 50px 0;
-	text-align: center;
-}
 
 .container {
 	display: block;
@@ -17,13 +18,17 @@ header {
 	width: 100%;
 }
 
-section {
-	float: left;
-	margin: 0 15px;
-	border: 3px solid black;
-	width: 30%;
-	background-color: grey;
+.title {
+	margin: 50px 0;
+	text-align: center;
+}
 
+section {
+	margin: 15px auto;
+	border: 3px solid black;
+	width: 25%;
+	background-color: grey;
+	
 }
 
 h3 {
@@ -55,24 +60,25 @@ p {
 @media (min-width: 992px) {
 	section {
 		width: 30%;
+		float: left;
+		margin: 1em;
 	}
 }
 
 /* Tablet view */
 
 @media (min-width: 768px) and (max-width: 991px) {
-	#col-1,
-	#col-2 {
-		width: 45%;
+	.col-1,
+	.col-2 {
+		width: 46%;
 		float: left;
-		margin: 0 auto;
 		margin: 15px;
 
 	}
-	#col-3 {
-		width: 93.5%;
+	.col-3 {
+		width: 95.5%;
 		height: 150px;
-		margin: 15px;
+		margin: 1em;
 		float: left;
 	}
 }
@@ -81,8 +87,7 @@ p {
 
 @media (max-width: 767px) {
 	section {
-		float: left;
 		width: 95%;
-		margin: 15px;
+		margin: 15px auto;
 	}
 }
