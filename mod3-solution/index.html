@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mod3-solution</title>
+  </head>
+  <body>
+    
+  <header class="navbar-header">
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1>Food, LLC</h1>
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto d-lg-none d-md-none" id="nav-list">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Chiken <span class="sr-only">(current)</span></a>
+        <hr visible-xs>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Beef</a>
+        <hr visible-xs>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sushi</a>
+        <hr visible-xs>
+      </li>
+  </div>
+  </div>
+
+  </nav>
+  </header>
+
+  <div class="container">
+    <div class="heading">
+      <h2>
+        Our Menu
+      </h2>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="main-content">
+      <h3>
+        Hiding elements
+      </h3>
+      <p>
+For faster mobile-friendly development, use responsive display classes for showing and hiding elements by device. Avoid creating entirely different versions of the same site, instead hide elements responsively for each screen size.
+
+To hide elements simply use the .d-none class or one of the .d-{sm,md,lg,xl}-none classes for any responsive screen variation.
+
+To show an element only on a given interval of screen sizes you can combine one .d-*-none class with a .d-*-* class, for example .d-none .d-md-block .d-xl-none will hide the element for all screen sizes except on medium and large devices.
+
+Screen Size 
+      </p>
+      <p>
+        So now we're ready to embark on actually doing the main content of the page. And what we're going to start with is this giant picture of the restaurant, of the interior of the restaurant, which is actually what's called the Jumbotron in bootstrap speak. However before we start, we're going to have to define some element that is going to be a container for everything that is inside of our website. And that's simply because remember, we put in the container our header and we want everything nicely aligned to its edges. So we need a top level element within our main content to have a container class assigned to it. Let's go ahead and start with that. Let's go back to code editor, let's open up the index.html that is located at this point in the examples lecture 34 after folder. And we'll go ahead and scroll down right below our cold button right here and we'll open up another DIV. We'll say div.container and we'll press tab and that's the emit plug-in that's helping me do this. And we'll actually give it even an ID so that way later it will be much easier for us to target it. We'll call it main-content. Main-content. Okay, so here's out main content, and now we're ready to code up our jumbotron. Well the way we're going to code our Jumbotron is we have a whole bunch of images in the Images folder. As you can see, jumbotron, they all are sized very differently. The first one is 768, that one is 768 pixels wide. Then there's jumbotron 992. That one is 992 pixels wide, and finally the 1200 one is the biggest one there. And obviously what we want from this is, to be able to substitute different pictures, different resolutions, depending on the screen size. So, assuming the smallest screen size, the smaller device, and it's probably mobile, And therefore we don't want to waste our bandwidth so let's go ahead and create a div that's going to contain our jumbotron. We'll press tab here and that's the DIV. And what's going to happen is we're going to assign a background CSS property to this DIV and it's going to load the image responsively. Meaning depending on the media query it's going to appear and is going to load different size image. However we have one limitation. We can't stretch and construct the image when it is sized that ways of background image. And we needed to stretch and contract when it's very small and I'll show you in a minute what I mean. I'm going to go ahead and paste a little bit of code here. And I pre-made this code for you before. And what it's doing is it's creating an image tag. And the image tag is taking the smallest Jumbotron picture there is and assigning some old text. And this is the most important part here. The classes, the class IMG responsive comes from Bootstrap. And basically what it says is, as I change the width of the browser, the width and the sizing of the image is going to change proportionally. And that's very important for us, something we really can't do with a background image very well. And also I'm only going to make this visible when the screen is extra small. Which means if I save this right now, And go back to my browser, I'll see that this is showing up but the the image is not showing up. But if I squeeze the browser all the way to extra small you'll see that the image actually showed up. So I want only this img tag to show up when it's extra small. But for higher widths of the browser, I'm going to use the a background image in order to the size the image. Notice that we already see the effects of our container div, you can see how the edges of our header are aligning very nicely with the edges of our main content.
+3:46
+Okay so let's go back to our code editor and we'll open up our styles.css file and we'll load our jumbotron images in this proper media query so the first one is going to be for the large devices right here. And again I'm going to cut and paste some pre-baked CSS.
+4:05
+So here's our jumbotron, and what we're doing is basic, we're adding to or overriding some of the properties that the Bootstrap jumbotron class had. So number one is, we're assigning a background URL to be the largest jumbotron image there is, and we obviously, don't want to repeat that. And we're setting it's height because as you know background images don't effect the height of the element, so therefore we need to set the height. And we're giving it some box shadow and something that you should look up how that works. It's very, very simple. And we're giving it a two pixel border so it will stand out a little bit better. So let's save that and go ahead and look in our browser to see how that looks. So here's our jumbotron, and you can see that we have the border and some of the buck shadowing going on around it. And it's looking pretty nice. However, if we squeeze the browser a little bit and it becomes small than the large size, again, the image disappears obviously because we haven't really assigned an image to that size. So we'll go ahead and go to our medium devices only section of our media query. And we'll go ahead and paste another jumbotron image and this one is going to go right here. And here is some pre-baked code that I have, and again the background URL now is going to be 992. That should match the lower bound of this media query. And I'm decreasing the height a little bit as you can see. The box shadows basically the same and the border the same. Now we still need to repeat this because we didn't really factor it out and we didn't put it outside of the media queries. So we need to repeat these parts. But it's not such a big deal I guess in the future. We could pull it out here all together and put it outside of either media query that way they could share it. So let's go back and check if it works. So now we should be by the medium size it should switch to our smaller image. That's good, that's working. But when we get this small again, it's not there. So let's go back to our code editor and we'll go to the small devices. And again, I have pre-baked CSS that I already wrote prior to this lecture, so we'll go ahead and cut and paste that here. And you can see now, I'm using the lower bound jpeg jumbotron that's matching this, and the height again, is a little bit smaller. And the box shadow, and the border again, are the same. So if I save that, and go back to my browser. So now, I have the largest image, this size. A little bit smaller image at this size and yet even smaller image at this size.
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
